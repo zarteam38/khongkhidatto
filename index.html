@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Không Khí Đất Tổ Phú Thọ - Sản Phẩm Cao Cấp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #edf2f7;
+            --accent-color: #d53f8c;
+            --text-color: #1a202c;
+            --light-color: #f7fafc;
+            --dark-color: #2d3748;
+            --success-color: #38a169;
+            --warning-color: #d69e2e;
+            --danger-color: #e53e3e;
+            --gradient: linear-gradient(135deg, #2c5282, #4299e1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1531685250784-b0dfbcde7e6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* Product Section */
+        .product-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .product-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+        
+        .product-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .product-title {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .product-price {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-price .original-price {
+            font-size: 1.5rem;
+            color: #a0aec0;
+            text-decoration: line-through;
+            margin-left: 15px;
+        }
+        
+        .product-description {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .product-features {
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item i {
+            color: var(--success-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .star {
+            color: #f6e05e;
+            margin-right: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .rating-text {
+            margin-left: 10px;
+            color: #718096;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            padding: 18px;
+            font-size: 18px;
+        }
+        
+        /* Promotion Banner */
+        .promotion-banner {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .promotion-banner i {
+            color: #ffc107;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .promotion-content {
+            flex: 1;
+        }
+        
+        .promotion-title {
+            font-weight: 600;
+            color: #d69e2e;
+            margin-bottom: 5px;
+        }
+        
+        .promotion-code {
+            font-family: monospace;
+            background-color: #f6e05e;
+            color: #744210;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        /* Product Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            overflow: auto;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 3% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalopen 0.5s;
+            overflow: hidden;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .modal-header h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .modal-body img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-details-modal {
+            flex: 1;
+            padding: 0 30px;
+        }
+        
+        .product-details-modal h2 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+        }
+        
+        .product-details-modal .price {
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-details-modal .price .original-price {
+            font-size: 1.3rem;
+            color: #a0aec0;
+            text-decoration: line-through;
+            margin-left: 15px;
+        }
+        
+        .product-details-modal .description {
+            margin-bottom: 25px;
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+        
+        .close:hover {
+            color: #f7fafc;
+        }
+        
+        /* Order Form */
+        .order-form {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .order-form h3 {
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+        
+        .promo-code-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .promo-code-group .form-control {
+            flex: 1;
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .apply-btn {
+            background-color: var(--warning-color);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .apply-btn:hover {
+            background-color: #b7791f;
+        }
+        
+        .order-summary {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .order-summary h4 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #e2e8f0;
+        }
+        
+        /* Anti-spam */
+        .honeypot {
+            display: none;
+        }
+        
+        /* Reviews Section */
+        .reviews {
+            margin-top: 40px;
+        }
+        
+        .reviews h3 {
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+        
+        .review {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .review:hover {
+            transform: translateY(-5px);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .review-date {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        
+        .review-rating {
+            margin-bottom: 15px;
+        }
+        
+        .review-text {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            padding: 20px 30px;
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            transform: translateX(150%);
+            transition: transform 0.4s ease-out;
+            font-weight: 500;
+            max-width: 400px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.error {
+            background-color: var(--danger-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gradient);
+        }
+        
+        .footer-section p {
+            color: #cbd5e0;
+            line-height: 1.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .footer-section ul li a i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #4a5568;
+            font-size: 0.95rem;
+            color: #a0aec0;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .product-showcase {
+                flex-direction: column;
+            }
+            
+            .product-image {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .modal-body {
+                flex-direction: column;
+            }
+            
+            .product-details-modal {
+                padding: 20px 0 0 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .product-title {
+                font-size: 2rem;
+            }
+            
+            .product-details-modal h2 {
+                font-size: 1.8rem;
+            }
+            
+            .promo-code-group {
+                flex-direction: column;
+            }
+            
+            .promo-code-group .form-control {
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+            
+            .apply-btn {
+                border-radius: 8px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                Không Khí Đất Tổ
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#product">Sản Phẩm</a></li>
+                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Không Khí Đất Tổ Phú Thọ</h1>
+            <p>Trải nghiệm không khí tinh khiết từ thiên nhiên, mang lại sự tươi mới và năng lượng tích cực cho không gian sống của bạn</p>
+            <a href="#product" class="btn">Khám Phá Ngay</a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product" class="product-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sản Phẩm Cao Cấp</h2>
+                <p>Không Khí Đất Tổ Phú Thọ - tinh hoa từ thiên nhiên, mang đến cho bạn không gian sống trong lành và tràn đầy năng lượng</p>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-image">
+                    <img src="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.15752-9/551757838_2271461829991854_647105416855738775_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=9f807c&amp;_nc_eui2=AeFeJ-HLH9cJJ4bPDBxYYv2t8vRoy6R9obry9GjLpH2huoVpXE7xEDrbEgvx00SK0INkx-h1EH7yPQLRyiGsTpDt&amp;_nc_ohc=in264b8ECJ8Q7kNvwGiwX_-&amp;_nc_oc=Adld6htw_P1ILxvD8vn_U2Sn4CtfjtYxF6a-wWha2u7hZg4b5PEYjGPLhZ2uEViWmRDNe_uqFBW-2o_z9DBGOF5y&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan3-5.fna&amp;oh=03_Q7cD3QE8MS4GaRsbhGjW8mueKeiQnXxdK7sXGXBvcpS0qyyiTg&amp;oe=68FB5702" alt="Không Khí Đất Tổ Phú Thọ">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Không Khí Đất Tổ Phú Thọ</h2>
+                    <div class="product-price">
+                        30.000₫
+                        <span class="original-price">80.000₫</span>
+                    </div>
+                    
+                    <div class="promotion-banner">
+                        <i class="fas fa-tag"></i>
+                        <div class="promotion-content">
+                            <div class="promotion-title">ƯU ĐÃI ĐẶC BIỆT</div>
+                            <div>Nhập mã <span class="promotion-code">EmAnhYang</span> để được FREE SHIP</div>
+                        </div>
+                    </div>
+                    
+                    <p class="product-description">
+                        Không Khí Đất Tổ Phú Thọ là sản phẩm cao cấp được chiết xuất từ các thành phần tự nhiên quý giá, giúp thanh lọc không khí, mang lại cảm giác tươi mới và tràn đầy năng lượng tích cực cho không gian sống của bạn. Sản phẩm được nghiên cứu và phát triển bởi các chuyên gia hàng đầu, đảm bảo chất lượng và an toàn tuyệt đối.
+                    </p>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Thanh lọc không khí hiệu quả</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Thành phần 100% từ thiên nhiên</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>An toàn cho sức khỏe</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Lưu hương lâu dài</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-rating">
+                        <div>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <span class="rating-text">(3 đánh giá)</span>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="orderBtn">Đặt Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Chi Tiết Sản Phẩm</h2>
+                <button class="close">×</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.15752-9/551757838_2271461829991854_647105416855738775_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=9f807c&amp;_nc_eui2=AeFeJ-HLH9cJJ4bPDBxYYv2t8vRoy6R9obry9GjLpH2huoVpXE7xEDrbEgvx00SK0INkx-h1EH7yPQLRyiGsTpDt&amp;_nc_ohc=in264b8ECJ8Q7kNvwGiwX_-&amp;_nc_oc=Adld6htw_P1ILxvD8vn_U2Sn4CtfjtYxF6a-wWha2u7hZg4b5PEYjGPLhZ2uEViWmRDNe_uqFBW-2o_z9DBGOF5y&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan3-5.fna&amp;oh=03_Q7cD3QE8MS4GaRsbhGjW8mueKeiQnXxdK7sXGXBvcpS0qyyiTg&amp;oe=68FB5702" alt="Không Khí Đất Tổ Phú Thọ">
+                <div class="product-details-modal">
+                    <h2>Không Khí Đất Tổ Phú Thọ</h2>
+                    <div class="price">
+                        30.000₫
+                        <span class="original-price">80.000₫</span>
+                    </div>
+                    <p class="description">
+                        Không Khí Đất Tổ Phú Thọ là sản phẩm cao cấp được chiết xuất từ các thành phần tự nhiên quý giá, giúp thanh lọc không khí, mang lại cảm giác tươi mới và tràn đầy năng lượng tích cực cho không gian sống của bạn. Sản phẩm được nghiên cứu và phát triển bởi các chuyên gia hàng đầu, đảm bảo chất lượng và an toàn tuyệt đối.
+                    </p>
+                    
+                    <!-- Order Form -->
+                    <div class="order-form">
+                        <h3>Đặt Hàng Ngay</h3>
+                        
+                        <div class="promo-code-group">
+                            <input type="text" class="form-control" id="promoCode" placeholder="Nhập mã giảm giá (nếu có)">
+                            <button type="button" class="apply-btn" id="applyPromo">Áp Dụng</button>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <h4>Tóm Tắt Đơn Hàng</h4>
+                            <div class="summary-row">
+                                <span>Giá sản phẩm:</span>
+                                <span id="productPrice">30.000₫</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Phí vận chuyển:</span>
+                                <span id="shippingFee">50.000₫</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Giảm giá:</span>
+                                <span id="discount">0₫</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Tổng cộng:</span>
+                                <span id="totalPrice">80.000₫</span>
+                            </div>
+                        </div>
+                        
+                        <form id="orderForm">
+                            <input type="hidden" id="productId" name="productId" value="1">
+                            <div class="form-group">
+                                <label for="customerName">Họ và Tên</label>
+                                <input type="text" class="form-control" id="customerName" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Số Điện Thoại</label>
+                                <input type="tel" class="form-control" id="customerPhone" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Email</label>
+                                <input type="email" class="form-control" id="customerEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="customerAddress">Địa Chỉ</label>
+                                <input type="text" class="form-control" id="customerAddress" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="orderNotes">Ghi Chú</label>
+                                <textarea class="form-control" id="orderNotes" rows="3"></textarea>
+                            </div>
+                            <!-- Anti-spam honeypot -->
+                            <div class="honeypot">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Đặt Hàng</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Reviews Section -->
+                    <div class="reviews">
+                        <h3>Đánh Giá Sản Phẩm</h3>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="reviewer-name">Hoàng Minh Hiếu</span>
+                                <span class="review-date">20/05/2023</span>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <p class="review-text">Sản phẩm tuyệt vời! Không khí trong nhà tôi trở nên trong lành hơn hẳn sau khi sử dụng. Mùi hương rất tự nhiên và dễ chịu. Tôi sẽ giới thiệu cho bạn bè.</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="reviewer-name">Lâm Đại Đa</span>
+                                <span class="review-date">15/05/2023</span>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <p class="review-text">Tôi rất hài lòng với sản phẩm này. Giá thành hợp lý so với chất lượng. Đặc biệt, sản phẩm rất an toàn cho trẻ nhỏ và người già trong gia đình tôi.</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="reviewer-name">Bùi Phú Long</span>
+                                <span class="review-date">10/05/2023</span>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <p class="review-text">Sản phẩm tốt, giao hàng nhanh. Tuy nhiên, tôi mong muốn có nhiều lựa chọn về mùi hương hơn. Nhìn chung, đây là một sản phẩm đáng giá.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>Chúng tôi chuyên cung cấp các sản phẩm cao cấp với chất lượng đảm bảo và giá cả hợp lý. Không Khí Đất Tổ Phú Thọ là sản phẩm tiêu biểu nhất của chúng tôi, mang đến không gian sống trong lành và tràn đầy năng lượng.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Trang Chủ</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Sản Phẩm</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Giới Thiệu</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i>Vĩnh Phúc</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i>0878273977<br></a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i>khongkhidatto@gmail.com<br></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kết Nối Với Chúng Tôi</h3>
+                    <div class="social-links">
+                        <a href="#" style="font-size: 24px; margin-right: 15px; color: #4299e1;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="font-size: 24px; margin-right: 15px; color: #e53e3e;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size: 24px; margin-right: 15px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="font-size: 24px; color: #ff0000;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Không Khí Đất Tổ Phú Thọ. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const modal = document.getElementById('productModal');
+        const closeBtn = document.querySelector('.close');
+        const orderBtn = document.getElementById('orderBtn');
+        const orderForm = document.getElementById('orderForm');
+        const notification = document.getElementById('notification');
+        const applyPromoBtn = document.getElementById('applyPromo');
+        const promoCodeInput = document.getElementById('promoCode');
+        
+        // Price elements
+        const productPriceEl = document.getElementById('productPrice');
+        const shippingFeeEl = document.getElementById('shippingFee');
+        const discountEl = document.getElementById('discount');
+        const totalPriceEl = document.getElementById('totalPrice');
+        
+        // Base prices
+        const baseProductPrice = 30000;
+        const baseShippingFee = 50000;
+        
+        // Open modal with product details
+        orderBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Apply promo code
+        applyPromoBtn.addEventListener('click', function() {
+            const promoCode = promoCodeInput.value.trim();
+            
+            if (promoCode === 'EmAnhYang') {
+                // Free shipping
+                shippingFeeEl.textContent = '0₫';
+                discountEl.textContent = '50.000₫';
+                totalPriceEl.textContent = '30.000₫';
+                
+                showNotification('Áp dụng mã giảm giá thành công! Bạn được miễn phí vận chuyển.');
+            } else if (promoCode === '') {
+                showNotification('Vui lòng nhập mã giảm giá', 'error');
+            } else {
+                showNotification('Mã giảm giá không hợp lệ', 'error');
+            }
+        });
+        
+        // Handle order form submission
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Anti-spam check
+            const honeypot = document.getElementById('website').value;
+            if (honeypot) {
+                showNotification('Đã phát hiện spam!', 'error');
+                return;
+            }
+            
+            // Get form data
+            const formData = {
+                productId: document.getElementById('productId').value,
+                productName: "Không Khí Đất Tổ Phú Thọ",
+                productPrice: "30.000₫",
+                customerName: document.getElementById('customerName').value,
+                customerPhone: document.getElementById('customerPhone').value,
+                customerEmail: document.getElementById('customerEmail').value,
+                customerAddress: document.getElementById('customerAddress').value,
+                orderNotes: document.getElementById('orderNotes').value,
+                promoCode: promoCodeInput.value.trim(),
+                totalPrice: totalPriceEl.textContent
+            };
+            
+            // Send to Discord webhook
+            sendToDiscord(formData);
+            
+            // Reset form
+            orderForm.reset();
+            promoCodeInput.value = '';
+            
+            // Reset prices
+            productPriceEl.textContent = '30.000₫';
+            shippingFeeEl.textContent = '50.000₫';
+            discountEl.textContent = '0₫';
+            totalPriceEl.textContent = '80.000₫';
+            
+            // Close modal
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Show success notification
+            showNotification('Đặt hàng thành công! Chúng tôi sẽ liên hệ với bạn sớm.');
+        });
+        
+        // Send order data to Discord webhook
+        function sendToDiscord(data) {
+            // Thay URL này bằng Discord webhook của bạn
+            const webhookURL = 'https://discord.com/api/webhooks/123456789/abcdefg';
+            
+            const promoInfo = data.promoCode ? 
+                (data.promoCode === 'EmAnhYang' ? '✅ Mã "EmAnhYang" - Miễn phí vận chuyển' : `❌ Mã "${data.promoCode}" - Không hợp lệ`) : 
+                '❌ Không sử dụng mã giảm giá';
+            
+            const message = {
+                embeds: [{
+                    title: "ĐƠN HÀNG MỚI - Không Khí Đất Tổ Phú Thọ",
+                    color: 5814783,
+                    fields: [
+                        {
+                            name: "Sản phẩm",
+                            value: data.productName,
+                            inline: false
+                        },
+                        {
+                            name: "Giá",
+                            value: data.productPrice,
+                            inline: true
+                        },
+                        {
+                            name: "Phí vận chuyển",
+                            value: data.promoCode === 'EmAnhYang' ? '0₫ (Miễn phí)' : '50.000₫',
+                            inline: true
+                        },
+                        {
+                            name: "Tổng cộng",
+                            value: data.totalPrice,
+                            inline: true
+                        },
+                        {
+                            name: "Họ tên",
+                            value: data.customerName,
+                            inline: false
+                        },
+                        {
+                            name: "Số điện thoại",
+                            value: data.customerPhone,
+                            inline: true
+                        },
+                        {
+                            name: "Email",
+                            value: data.customerEmail || "Không cung cấp",
+                            inline: true
+                        },
+                        {
+                            name: "Địa chỉ",
+                            value: data.customerAddress,
+                            inline: false
+                        },
+                        {
+                            name: "Mã giảm giá",
+                            value: promoInfo,
+                            inline: false
+                        },
+                        {
+                            name: "Ghi chú",
+                            value: data.orderNotes || "Không có",
+                            inline: false
+                        }
+                    ],
+                    footer: {
+                        text: "Không Khí Đất Tổ Phú Thọ - " + new Date().toLocaleString()
+                    }
+                }]
+            };
+            
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(message)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                console.log('Order sent to Discord successfully');
+            })
+            .catch(error => {
+                console.error('Error sending order to Discord:', error);
+                showNotification('Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại sau.', 'error');
+            });
+        }
+        
+        // Show notification
+        function showNotification(message, type = 'success') {
+            notification.textContent = message;
+            notification.className = 'notification';
+            
+            if (type === 'error') {
+                notification.classList.add('error');
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.08)';
+                header.style.padding = '';
+            }
+        });
+    </script>
+
+</body></html>
