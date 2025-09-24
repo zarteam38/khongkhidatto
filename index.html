@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Không Khí Đất Tổ Phú Thọ - Sản Phẩm Cao Cấp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c5282;
-            --secondary-color: #edf2f7;
-            --accent-color: #d53f8c;
-            --text-color: #1a202c;
-            --light-color: #f7fafc;
-            --dark-color: #2d3748;
-            --success-color: #38a169;
-            --warning-color: #d69e2e;
-            --danger-color: #e53e3e;
-            --gradient: linear-gradient(135deg, #2c5282, #4299e1);
+            --primary-color: #b71c1c; /* Màu đỏ đậm hơn, ít chói hơn */
+            --secondary-color: #f9a825; /* Màu vàng vàng nhạt hơn */
+            --accent-color: #d32f2f;
+            --text-color: #263238; /* Màu chữ đậm hơn để dễ đọc */
+            --light-color: #f5f5f5;
+            --dark-color: #263238;
+            --success-color: #388e3c;
+            --warning-color: #ffa000;
+            --danger-color: #d32f2f;
+            --gradient: linear-gradient(135deg, #b71c1c, #d32f2f);
+            --vietnam-gradient: linear-gradient(135deg, #b71c1c, #f9a825);
+            --bg-color: #f8f9fa; /* Nền màu nhạt hơn để giảm chói */
         }
         
         * {
@@ -27,10 +29,10 @@
         }
         
         body {
-            background-color: #f5f7ff;
+            background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
         }
         
@@ -43,12 +45,13 @@
         /* Header Styles */
         header {
             background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
+            border-bottom: 2px solid var(--primary-color);
         }
         
         .header-container {
@@ -59,17 +62,19 @@
         }
         
         .logo {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             color: var(--primary-color);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Bebas Neue', cursive;
             display: flex;
             align-items: center;
+            letter-spacing: 2px;
         }
         
         .logo i {
             margin-right: 10px;
-            color: var(--accent-color);
+            color: var(--secondary-color);
+            font-size: 36px;
         }
         
         nav ul {
@@ -88,6 +93,8 @@
             font-size: 16px;
             position: relative;
             transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         nav ul li a::after {
@@ -97,7 +104,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             transition: width 0.3s;
         }
         
@@ -113,7 +120,7 @@
         .hero {
             background: var(--gradient);
             color: white;
-            padding: 150px 0 100px;
+            padding: 180px 0 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -127,52 +134,102 @@
             width: 100%;
             height: 100%;
             background: url('https://images.unsplash.com/photo-1531685250784-b0dfbcde7e6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            opacity: 0.2;
+            opacity: 0.15;
             z-index: -1;
         }
         
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(183, 28, 28, 0.9), rgba(249, 168, 37, 0.8));
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-            letter-spacing: 1px;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             animation: fadeInDown 1s ease;
         }
         
         .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
+            font-size: 1.5rem;
+            max-width: 800px;
             margin: 0 auto 40px;
             animation: fadeInUp 1s ease;
+            font-weight: 500;
+        }
+        
+        .vietnam-flag {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .vietnam-flag i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin: 0 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .btn {
             display: inline-block;
-            background-color: white;
+            background-color: var(--secondary-color);
             color: var(--primary-color);
-            padding: 15px 35px;
+            padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            font-size: 17px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Bebas Neue', cursive;
         }
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            background-color: var(--accent-color);
-            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
         }
         
         /* Product Section */
         .product-section {
             padding: 100px 0;
             background-color: white;
+            position: relative;
+        }
+        
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--vietnam-gradient);
         }
         
         .section-title {
@@ -181,12 +238,13 @@
         }
         
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             color: var(--dark-color);
             position: relative;
             display: inline-block;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Bebas Neue', cursive;
             margin-bottom: 15px;
+            letter-spacing: 2px;
         }
         
         .section-title h2::after {
@@ -195,16 +253,17 @@
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
+            width: 100px;
+            height: 4px;
             background: var(--gradient);
         }
         
         .section-title p {
-            font-size: 1.1rem;
-            color: #718096;
-            max-width: 700px;
+            font-size: 1.2rem;
+            color: #546e7a;
+            max-width: 800px;
             margin: 0 auto;
+            font-weight: 400;
         }
         
         .product-showcase {
@@ -223,8 +282,9 @@
         .product-image img {
             width: 100%;
             border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s;
+            border: 5px solid white;
         }
         
         .product-image:hover img {
@@ -237,30 +297,33 @@
         }
         
         .product-title {
-            font-size: 2.5rem;
-            color: var(--dark-color);
+            font-size: 2.8rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         .product-price {
-            font-size: 2.5rem;
-            color: var(--accent-color);
+            font-size: 2.8rem;
+            color: var(--primary-color);
             font-weight: bold;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
+            font-family: 'Bebas Neue', cursive;
         }
         
         .product-price .original-price {
-            font-size: 1.5rem;
-            color: #a0aec0;
+            font-size: 1.8rem;
+            color: #90a4ae;
             text-decoration: line-through;
             margin-left: 15px;
         }
         
         .product-description {
-            color: #4a5568;
+            color: #455a64;
             margin-bottom: 30px;
             font-size: 1.1rem;
             line-height: 1.8;
@@ -277,9 +340,13 @@
         }
         
         .feature-item i {
-            color: var(--success-color);
+            color: var(--primary-color);
             margin-right: 15px;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature-item span {
+            font-weight: 500;
         }
         
         .product-rating {
@@ -289,14 +356,15 @@
         }
         
         .star {
-            color: #f6e05e;
+            color: var(--secondary-color);
             margin-right: 5px;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
         
         .rating-text {
             margin-left: 10px;
-            color: #718096;
+            color: #546e7a;
+            font-weight: 500;
         }
         
         .btn-primary {
@@ -305,25 +373,35 @@
             width: 100%;
             max-width: 300px;
             text-align: center;
-            padding: 18px;
-            font-size: 18px;
+            padding: 20px;
+            font-size: 20px;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
         }
         
         /* Promotion Banner */
         .promotion-banner {
             background-color: #fff8e1;
-            border-left: 4px solid #ffc107;
-            padding: 15px 20px;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
             margin-bottom: 30px;
             border-radius: 5px;
             display: flex;
             align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         
         .promotion-banner i {
-            color: #ffc107;
-            font-size: 24px;
-            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 30px;
+            margin-right: 20px;
         }
         
         .promotion-content {
@@ -331,20 +409,25 @@
         }
         
         .promotion-title {
-            font-weight: 600;
-            color: #d69e2e;
-            margin-bottom: 5px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .promotion-code {
-            font-family: monospace;
-            background-color: #f6e05e;
-            color: #744210;
-            padding: 3px 8px;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 6px 14px;
             border-radius: 4px;
             font-weight: bold;
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 8px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         /* Product Detail Modal */
@@ -355,7 +438,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 10000;
             overflow: auto;
             backdrop-filter: blur(5px);
@@ -368,9 +451,10 @@
             border-radius: 15px;
             width: 90%;
             max-width: 900px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
             animation: modalopen 0.5s;
             overflow: hidden;
+            border: 3px solid var(--primary-color);
         }
         
         @keyframes modalopen {
@@ -389,69 +473,67 @@
         }
         
         .modal-header h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 2px;
         }
         
         .modal-body {
             padding: 30px;
             display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .modal-body img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
         }
         
         .product-details-modal {
             flex: 1;
-            padding: 0 30px;
         }
         
         .product-details-modal h2 {
             margin-bottom: 20px;
-            color: var(--dark-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         .product-details-modal .price {
-            font-size: 2rem;
-            color: var(--accent-color);
+            font-size: 2.5rem;
+            color: var(--primary-color);
             font-weight: bold;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            font-family: 'Bebas Neue', cursive;
         }
         
         .product-details-modal .price .original-price {
-            font-size: 1.3rem;
-            color: #a0aec0;
+            font-size: 1.5rem;
+            color: #90a4ae;
             text-decoration: line-through;
             margin-left: 15px;
         }
         
         .product-details-modal .description {
             margin-bottom: 25px;
-            color: #4a5568;
+            color: #455a64;
             font-size: 1.1rem;
             line-height: 1.7;
         }
         
         .close {
             color: white;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s;
             background: none;
             border: none;
+            font-family: 'Bebas Neue', cursive;
         }
         
         .close:hover {
-            color: #f7fafc;
+            color: var(--secondary-color);
         }
         
         /* Order Form */
@@ -460,14 +542,16 @@
             padding: 30px;
             border-radius: 12px;
             margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary-color);
         }
         
         .order-form h3 {
             margin-bottom: 25px;
-            color: var(--dark-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
         
         .form-group {
@@ -478,22 +562,25 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: var(--dark-color);
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .form-control {
             width: 100%;
             padding: 15px;
-            border: 1px solid #e2e8f0;
+            border: 2px solid #e0e0e0;
             border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s;
+            font-family: 'Roboto', sans-serif;
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+            box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.2);
         }
         
         .promo-code-group {
@@ -504,21 +591,26 @@
         .promo-code-group .form-control {
             flex: 1;
             border-radius: 8px 0 0 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
         }
         
         .apply-btn {
-            background-color: var(--warning-color);
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
             border: none;
-            padding: 0 20px;
+            padding: 0 25px;
             border-radius: 0 8px 8px 0;
             cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
         }
         
         .apply-btn:hover {
-            background-color: #b7791f;
+            background-color: white;
+            color: var(--primary-color);
         }
         
         .order-summary {
@@ -526,26 +618,31 @@
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 25px;
+            border: 2px solid #f0f0f0;
         }
         
         .order-summary h4 {
             margin-bottom: 15px;
-            color: var(--dark-color);
+            color: var(--primary-color);
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
         
         .summary-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 500;
         }
         
         .summary-row.total {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #e2e8f0;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px dashed #e0e0e0;
         }
         
         /* Anti-spam */
@@ -560,9 +657,10 @@
         
         .reviews h3 {
             margin-bottom: 25px;
-            color: var(--dark-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
         
         .review {
@@ -570,8 +668,9 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
+            border-left: 4px solid var(--primary-color);
         }
         
         .review:hover {
@@ -585,12 +684,13 @@
         }
         
         .reviewer-name {
-            font-weight: 600;
-            color: var(--dark-color);
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
         }
         
         .review-date {
-            color: #a0aec0;
+            color: #90a4ae;
             font-size: 0.9rem;
         }
         
@@ -599,8 +699,9 @@
         }
         
         .review-text {
-            color: #4a5568;
+            color: #455a64;
             line-height: 1.6;
+            font-weight: 400;
         }
         
         /* Notification */
@@ -609,15 +710,17 @@
             top: 30px;
             right: 30px;
             padding: 20px 30px;
-            background-color: var(--success-color);
+            background-color: var(--primary-color);
             color: white;
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
             z-index: 10000;
             transform: translateX(150%);
             transition: transform 0.4s ease-out;
             font-weight: 500;
             max-width: 400px;
+            border: 2px solid var(--secondary-color);
+            font-family: 'Roboto', sans-serif;
         }
         
         .notification.show {
@@ -631,8 +734,19 @@
         /* Footer */
         footer {
             background-color: var(--dark-color);
-            color: white;
+            color: #eceff1;
             padding: 70px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--vietnam-gradient);
         }
         
         .footer-content {
@@ -650,11 +764,13 @@
         }
         
         .footer-section h3 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 12px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         .footer-section h3::after {
@@ -662,14 +778,15 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 2px;
+            width: 60px;
+            height: 3px;
             background: var(--gradient);
         }
         
         .footer-section p {
-            color: #cbd5e0;
+            color: #cfd8dc;
             line-height: 1.8;
+            font-weight: 400;
         }
         
         .footer-section ul {
@@ -681,28 +798,36 @@
         }
         
         .footer-section ul li a {
-            color: #cbd5e0;
+            color: #cfd8dc;
             text-decoration: none;
             transition: color 0.3s;
             display: flex;
             align-items: center;
+            font-weight: 400;
         }
         
         .footer-section ul li a:hover {
-            color: white;
+            color: var(--secondary-color);
         }
         
         .footer-section ul li a i {
             margin-right: 10px;
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #4a5568;
+            border-top: 1px solid #455a64;
             font-size: 0.95rem;
-            color: #a0aec0;
+            color: #b0bec5;
+            font-weight: 400;
+        }
+        
+        .vietnam-icon {
+            display: inline-block;
+            margin: 0 5px;
+            color: var(--secondary-color);
         }
         
         /* Animations */
@@ -756,37 +881,33 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .modal-body {
                 flex-direction: column;
             }
-            
-            .product-details-modal {
-                padding: 20px 0 0 0;
-            }
         }
         
         @media (max-width: 576px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .product-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .product-details-modal h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .promo-code-group {
@@ -800,7 +921,7 @@
             
             .apply-btn {
                 border-radius: 8px;
-                padding: 12px;
+                padding: 15px;
             }
         }
     </style>
@@ -810,8 +931,8 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-leaf"></i>
-                Không Khí Đất Tổ
+                <i class="fas fa-flag"></i>
+                KHÔNG KHÍ ĐẤT TỔ
             </div>
             <nav>
                 <ul>
@@ -826,10 +947,17 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container hero-content">
+            <div class="vietnam-flag">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
             <h1>Không Khí Đất Tổ Phú Thọ</h1>
-            <p>Trải nghiệm không khí tinh khiết từ thiên nhiên, mang lại sự tươi mới và năng lượng tích cực cho không gian sống của bạn</p>
-            <a href="#product" class="btn">Khám Phá Ngay</a>
+            <p>Hào hùng - Minh tính - Chết việt nam</p>
+            <a href="#product" class="btn">KHÁM PHÁ NGAY</a>
         </div>
     </section>
 
@@ -837,7 +965,7 @@
     <section id="product" class="product-section">
         <div class="container">
             <div class="section-title">
-                <h2>Sản Phẩm Cao Cấp</h2>
+                <h2>SẢN PHẨM CAO CẤP</h2>
                 <p>Không Khí Đất Tổ Phú Thọ - tinh hoa từ thiên nhiên, mang đến cho bạn không gian sống trong lành và tràn đầy năng lượng</p>
             </div>
             
@@ -853,7 +981,7 @@
                     </div>
                     
                     <div class="promotion-banner">
-                        <i class="fas fa-tag"></i>
+                        <i class="fas fa-tags"></i>
                         <div class="promotion-content">
                             <div class="promotion-title">ƯU ĐÃI ĐẶC BIỆT</div>
                             <div>Nhập mã <span class="promotion-code">EmAnhYang</span> để được FREE SHIP</div>
@@ -894,7 +1022,7 @@
                         <span class="rating-text">(3 đánh giá)</span>
                     </div>
                     
-                    <button class="btn btn-primary" id="orderBtn">Đặt Mua Ngay</button>
+                    <button class="btn btn-primary" id="orderBtn">ĐẶT MUA NGAY</button>
                 </div>
             </div>
         </div>
@@ -904,11 +1032,10 @@
     <div id="productModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Chi Tiết Sản Phẩm</h2>
+                <h2>CHI TIẾT SẢN PHẨM</h2>
                 <button class="close">×</button>
             </div>
             <div class="modal-body">
-                <img src="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.15752-9/551757838_2271461829991854_647105416855738775_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=9f807c&amp;_nc_eui2=AeFeJ-HLH9cJJ4bPDBxYYv2t8vRoy6R9obry9GjLpH2huoVpXE7xEDrbEgvx00SK0INkx-h1EH7yPQLRyiGsTpDt&amp;_nc_ohc=in264b8ECJ8Q7kNvwGiwX_-&amp;_nc_oc=Adld6htw_P1ILxvD8vn_U2Sn4CtfjtYxF6a-wWha2u7hZg4b5PEYjGPLhZ2uEViWmRDNe_uqFBW-2o_z9DBGOF5y&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan3-5.fna&amp;oh=03_Q7cD3QE8MS4GaRsbhGjW8mueKeiQnXxdK7sXGXBvcpS0qyyiTg&amp;oe=68FB5702" alt="Không Khí Đất Tổ Phú Thọ">
                 <div class="product-details-modal">
                     <h2>Không Khí Đất Tổ Phú Thọ</h2>
                     <div class="price">
@@ -921,15 +1048,15 @@
                     
                     <!-- Order Form -->
                     <div class="order-form">
-                        <h3>Đặt Hàng Ngay</h3>
+                        <h3>ĐẶT HÀNG NGAY</h3>
                         
                         <div class="promo-code-group">
                             <input type="text" class="form-control" id="promoCode" placeholder="Nhập mã giảm giá (nếu có)">
-                            <button type="button" class="apply-btn" id="applyPromo">Áp Dụng</button>
+                            <button type="button" class="apply-btn" id="applyPromo">ÁP DỤNG</button>
                         </div>
                         
                         <div class="order-summary">
-                            <h4>Tóm Tắt Đơn Hàng</h4>
+                            <h4>TÓM TẮT ĐƠN HÀNG</h4>
                             <div class="summary-row">
                                 <span>Giá sản phẩm:</span>
                                 <span id="productPrice">30.000₫</span>
@@ -943,7 +1070,7 @@
                                 <span id="discount">0₫</span>
                             </div>
                             <div class="summary-row total">
-                                <span>Tổng cộng:</span>
+                                <span>TỔNG CỘNG:</span>
                                 <span id="totalPrice">80.000₫</span>
                             </div>
                         </div>
@@ -975,13 +1102,13 @@
                                 <label for="website">Website</label>
                                 <input type="text" id="website" name="website">
                             </div>
-                            <button type="submit" class="btn btn-primary">Đặt Hàng</button>
+                            <button type="submit" class="btn btn-primary">ĐẶT HÀNG</button>
                         </form>
                     </div>
                     
                     <!-- Reviews Section -->
                     <div class="reviews">
-                        <h3>Đánh Giá Sản Phẩm</h3>
+                        <h3>ĐÁNH GIÁ SẢN PHẨM</h3>
                         <div class="review">
                             <div class="review-header">
                                 <span class="reviewer-name">Hoàng Minh Hiếu</span>
@@ -1061,15 +1188,15 @@
                 <div class="footer-section">
                     <h3>Kết Nối Với Chúng Tôi</h3>
                     <div class="social-links">
-                        <a href="#" style="font-size: 24px; margin-right: 15px; color: #4299e1;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="font-size: 24px; margin-right: 15px; color: #e53e3e;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="font-size: 24px; margin-right: 15px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="font-size: 24px; color: #ff0000;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" style="font-size: 28px; margin-right: 15px; color: var(--primary-color);"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="font-size: 28px; margin-right: 15px; color: var(--primary-color);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size: 28px; margin-right: 15px; color: var(--primary-color);"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="font-size: 28px; color: var(--primary-color);"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2023 Không Khí Đất Tổ Phú Thọ. Tất cả quyền được bảo lưu.</p>
+                <p>© 2023 Không Khí Đất Tổ Phú Thọ. Tất cả quyền được bảo lưu. <span class="vietnam-icon"><i class="fas fa-star"></i></span> Made with <span class="vietnam-icon"><i class="fas fa-heart"></i></span> in Việt Nam</p>
             </div>
         </div>
     </footer>
@@ -1181,7 +1308,7 @@
         // Send order data to Discord webhook
         function sendToDiscord(data) {
             // Thay URL này bằng Discord webhook của bạn
-            const webhookURL = 'https://discord.com/api/webhooks/123456789/abcdefg';
+            const webhookURL = 'https://discord.com/api/webhooks/1420400973666324521/GrUCHG5uORlQ47U_QUrCXJ1cGm1jMJ0pBLu8z8YZqY8P2dQ5B2KtM8_w6gY48zg9KXQf';
             
             const promoInfo = data.promoCode ? 
                 (data.promoCode === 'EmAnhYang' ? '✅ Mã "EmAnhYang" - Miễn phí vận chuyển' : `❌ Mã "${data.promoCode}" - Không hợp lệ`) : 
